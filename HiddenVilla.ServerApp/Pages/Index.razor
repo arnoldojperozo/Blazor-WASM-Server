@@ -16,7 +16,15 @@ Welcome to your new app.
 </h2>
 Room: @room.RoomName
 <br/>
-Price: @room.RoomName
+Price: @room.Price
+<br/>
+
+<input type="number" @bind-value="@room.Price" @bind-value:event="oninput"/>
+<br/>
+<input type="checkbox" @bind-value="@room.IsActive" checked="@(room.IsActive)"/>
+Is Active
+<br/>
+<span>This Room is @(room.IsActive?"Active":"Inactive")</span> 
 <br/>
 
 @code{
